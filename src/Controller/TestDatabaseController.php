@@ -9,11 +9,10 @@ use App\Repository\TestDatabaseRepository;
 class TestDatabaseController extends AbstractController
 {
     /**
-     * @Route("/test-database", name="test_database")
+     * @Route("/", name="test_database")
      */
     public function index(TestDatabaseRepository $repo)
     {
-	
         return $this->render('test_database/index.html.twig', [
             'controller_name' => 'TestDatabaseController',
 	    'tests' => $repo->findAll(),
