@@ -16,5 +16,15 @@
         <li>Your controller at <code><a href="{{ '/home/clients/d8891960c3adb65fb15c5e8a3ad97047/24H_web/src/Controller/TestDatabaseController.php'|file_link(0) }}">src/Controller/TestDatabaseController.php</a></code></li>
         <li>Your template at <code><a href="{{ '/home/clients/d8891960c3adb65fb15c5e8a3ad97047/24H_web/templates/test_database/index.html.twig'|file_link(0) }}">templates/test_database/index.html.twig</a></code></li>
     </ul>
+    <h2>All test in the database:</h2>
+    <ul>
+	{% for test in tests %}
+	    <li>
+		lastname: {{ test.lastname }}<br>
+		surname: {{ test.surname }}<br>
+		age: {{ test.age }}<br>
+	    </li>
+	{% endfor %}
+    </ul>
 </div>
 {% endblock %}
