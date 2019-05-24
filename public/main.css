@@ -1926,6 +1926,24 @@ a {
   font-family: 'REGULAR';
   padding: 1px 2px 1px 4px;
 }
+#visualize-table tbody td .prep,
+#commands-table tbody td .prep {
+  background: #FFA768;
+  color: white;
+  padding: 3px 2px;
+}
+#visualize-table tbody td .waiting,
+#commands-table tbody td .waiting {
+  background: #FF4956;
+  color: white;
+  padding: 3px 2px;
+}
+#visualize-table tbody td .done,
+#commands-table tbody td .done {
+  background: #58DD6A;
+  color: white;
+  padding: 3px 2px;
+}
 #visualize-table tbody tr,
 #commands-table tbody tr {
   cursor: pointer;
