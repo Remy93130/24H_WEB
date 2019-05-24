@@ -39,8 +39,8 @@ class CafeController extends AbstractController
      */
     public function new(Request $request): Response
     {
-        if ($this->getUser()->getType() != "exportateur") {
-            return $this->redirectToRoute("app_logout");
+        if ($this->getUser() == null || $this->getUser()->getType() != "exportateur") {
+            return $this->redirectToRoute("index");
         }
         $cafe = new Cafe();
         $cafe->setProprietaire($this->getUser());
