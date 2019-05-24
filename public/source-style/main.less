@@ -111,11 +111,22 @@ a {
 		}
 	}
 }
-
+#background {
+	position:fixed;
+	bottom:0;
+	left:0;
+	width:100vw;
+	z-index:-1;
+}
 #body {
+	width:calc(100% - 200px);
+	margin-left:100px;
+	z-index:1;
+	background-color:white;
 	margin-top:@navbar_height;
-	min-height:calc(100% - @navbar_height) !important;
+	min-height:100vh !important;
 	padding-top:20px;
+	box-shadow:0 0 10px 1px rgba(0, 0, 0, 0.5);
 }
 #footer {
 	height:100px;
@@ -208,7 +219,7 @@ a {
 	&.hidden { display:none; }
 	position:fixed;
 	top:@navbar_height + 20px;
-	right:20px;
+	right:20px + 100px;
 	.content {
 		background-color:white;
 		.little-shadow();
