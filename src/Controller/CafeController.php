@@ -72,7 +72,7 @@ class CafeController extends AbstractController
     public function edit(Request $request, Cafe $cafe): Response
     {
         if ($this->getUser()->getType() != "exportateur") {
-            return $this->redirectToRoute("app_logout");
+            return $this->redirectToRoute("index");
         }
         $form = $this->createForm(CafeType::class, $cafe);
         $form->handleRequest($request);

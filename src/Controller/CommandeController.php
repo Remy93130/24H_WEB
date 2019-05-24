@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Commande;
 use App\Form\CommandeType;
 use App\Repository\CommandeRepository;
+use Exception;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -17,6 +18,8 @@ class CommandeController extends AbstractController
 {
     /**
      * @Route("/", name="commande_index", methods={"GET"})
+     * @param CommandeRepository $commandeRepository
+     * @return Response
      */
     public function index(CommandeRepository $commandeRepository): Response
     {
@@ -27,9 +30,15 @@ class CommandeController extends AbstractController
 
     /**
      * @Route("/new", name="commande_new", methods={"GET","POST"})
+     * @param Request $request
+     * @return Response
      */
     public function new(Request $request): Response
     {
+        if ($this->getUser() == null || $this->getUser()->getType() != "importateur") {
+            $this->redirectToRoute("index");
+        }
+
         $commande = new Commande();
         $form = $this->createForm(CommandeType::class, $commande);
         $form->handleRequest($request);
@@ -50,6 +59,8 @@ class CommandeController extends AbstractController
 
     /**
      * @Route("/{id}", name="commande_show", methods={"GET"})
+     * @param Commande $commande
+     * @return Response
      */
     public function show(Commande $commande): Response
     {
@@ -60,6 +71,9 @@ class CommandeController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="commande_edit", methods={"GET","POST"})
+     * @param Request $request
+     * @param Commande $commande
+     * @return Response
      */
     public function edit(Request $request, Commande $commande): Response
     {
@@ -82,6 +96,9 @@ class CommandeController extends AbstractController
 
     /**
      * @Route("/{id}", name="commande_delete", methods={"DELETE"})
+     * @param Request $request
+     * @param Commande $commande
+     * @return Response
      */
     public function delete(Request $request, Commande $commande): Response
     {

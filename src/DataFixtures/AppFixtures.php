@@ -2,10 +2,10 @@
 
 namespace App\DataFixtures;
 
+use App\Entity\Commande;
 use App\Entity\Producteur;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
-use Faker\Factory;
 
 class AppFixtures extends Fixture
 {
@@ -273,7 +273,24 @@ class AppFixtures extends Fixture
 		;
 		$manager->persist($producteur);
 	}
+        $this->commandeFixtures($manager);
 
         $manager->flush();
+    }
+
+    private function commandeFixtures(ObjectManager $manager)
+    {
+        for ($i = 0; $i < 20; $i++) {
+            $commande = new Commande();
+            $commande
+                ->setDate(new \DateTime())
+                ->setExportateur(null)
+                ->setOrigine(null)
+                ->setQuantite(100)
+                ->setSuivi("Attente d'expedition")
+                ->setType("Arabica")
+            ;
+            $manager->persist($commande);
+        }
     }
 }
