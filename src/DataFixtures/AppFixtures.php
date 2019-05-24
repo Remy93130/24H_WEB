@@ -286,11 +286,11 @@ class AppFixtures extends Fixture
             $commande = new Commande();
             $commande
                 ->setDate(new \DateTime())
-                ->setExportateur(null)
-                ->setOrigine(null)
                 ->setQuantite(100)
-                ->setSuivi("Attente d'expedition")
-                ->setType("Arabica")
+                ->setAcheteur(null)
+                ->setCafe(null)
+                ->setEtat("En cours d'expedition")
+                ->setVendeur(null)
             ;
             $manager->persist($commande);
         }

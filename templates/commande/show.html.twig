@@ -12,20 +12,16 @@
                 <td>{{ commande.id }}</td>
             </tr>
             <tr>
-                <th>Type</th>
-                <td>{{ commande.type }}</td>
-            </tr>
-            <tr>
-                <th>Quantite</th>
-                <td>{{ commande.quantite }}</td>
-            </tr>
-            <tr>
                 <th>Date</th>
                 <td>{{ commande.date ? commande.date|date('Y-m-d H:i:s') : '' }}</td>
             </tr>
             <tr>
-                <th>Suivi</th>
-                <td>{{ commande.suivi }}</td>
+                <th>Etat</th>
+                <td>{{ commande.etat }}</td>
+            </tr>
+            <tr>
+                <th>Quantite</th>
+                <td>{{ commande.quantite }}</td>
             </tr>
         </tbody>
     </table>

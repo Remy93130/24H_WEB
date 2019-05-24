@@ -9,10 +9,9 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Type</th>
-                <th>Quantite</th>
                 <th>Date</th>
-                <th>Suivi</th>
+                <th>Etat</th>
+                <th>Quantite</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -20,10 +19,9 @@
         {% for commande in commandes %}
             <tr>
                 <td>{{ commande.id }}</td>
-                <td>{{ commande.type }}</td>
-                <td>{{ commande.quantite }}</td>
                 <td>{{ commande.date ? commande.date|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ commande.suivi }}</td>
+                <td>{{ commande.etat }}</td>
+                <td>{{ commande.quantite }}</td>
                 <td>
                     <a href="{{ path('commande_show', {'id': commande.id}) }}">show</a>
                     <a href="{{ path('commande_edit', {'id': commande.id}) }}">edit</a>
@@ -31,7 +29,7 @@
             </tr>
         {% else %}
             <tr>
-                <td colspan="6">no records found</td>
+                <td colspan="5">no records found</td>
             </tr>
         {% endfor %}
         </tbody>

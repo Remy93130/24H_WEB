@@ -63,9 +63,10 @@ class User implements UserInterface
     private $cafes;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Commande", mappedBy="exportateur")
+     * @ORM\OneToMany(targetEntity="App\Entity\Commande", mappedBy="acheteur")
      */
     private $commandes;
+
 
     public function __construct()
     {
@@ -242,7 +243,7 @@ class User implements UserInterface
     {
         if (!$this->commandes->contains($commande)) {
             $this->commandes[] = $commande;
-            $commande->setExportateur($this);
+            $commande->setAcheteur($this);
         }
 
         return $this;
@@ -253,8 +254,8 @@ class User implements UserInterface
         if ($this->commandes->contains($commande)) {
             $this->commandes->removeElement($commande);
             // set the owning side to null (unless already changed)
-            if ($commande->getExportateur() === $this) {
-                $commande->setExportateur(null);
+            if ($commande->getAcheteur() === $this) {
+                $commande->setAcheteur(null);
             }
         }
 

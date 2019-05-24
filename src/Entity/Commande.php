@@ -17,86 +17,38 @@ class Commande
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="datetime")
      */
-    private $type;
+    private $date;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Producteur", inversedBy="commandes")
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="commandes")
      */
-    private $origine;
+    private $acheteur;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="commandes")
+     */
+    private $vendeur;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Cafe", inversedBy="commandes")
+     */
+    private $cafe;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $etat;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
     private $quantite;
 
-    /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="commandes")
-     */
-    private $exportateur;
-
-    /**
-     * @ORM\Column(type="datetime")
-     */
-    private $date;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $suivi;
-
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getType(): ?string
-    {
-        return $this->type;
-    }
-
-    public function setType(string $type): self
-    {
-        $this->type = $type;
-
-        return $this;
-    }
-
-    public function getOrigine(): ?Producteur
-    {
-        return $this->origine;
-    }
-
-    public function setOrigine(?Producteur $origine): self
-    {
-        $this->origine = $origine;
-
-        return $this;
-    }
-
-    public function getQuantite(): ?string
-    {
-        return $this->quantite;
-    }
-
-    public function setQuantite(string $quantite): self
-    {
-        $this->quantite = $quantite;
-
-        return $this;
-    }
-
-    public function getExportateur(): ?User
-    {
-        return $this->exportateur;
-    }
-
-    public function setExportateur(?User $exportateur): self
-    {
-        $this->exportateur = $exportateur;
-
-        return $this;
     }
 
     public function getDate(): ?\DateTimeInterface
@@ -111,14 +63,62 @@ class Commande
         return $this;
     }
 
-    public function getSuivi(): ?string
+    public function getAcheteur(): ?User
     {
-        return $this->suivi;
+        return $this->acheteur;
     }
 
-    public function setSuivi(string $suivi): self
+    public function setAcheteur(?User $acheteur): self
     {
-        $this->suivi = $suivi;
+        $this->acheteur = $acheteur;
+
+        return $this;
+    }
+
+    public function getVendeur(): ?User
+    {
+        return $this->vendeur;
+    }
+
+    public function setVendeur(?User $vendeur): self
+    {
+        $this->vendeur = $vendeur;
+
+        return $this;
+    }
+
+    public function getCafe(): ?Cafe
+    {
+        return $this->cafe;
+    }
+
+    public function setCafe(?Cafe $cafe): self
+    {
+        $this->cafe = $cafe;
+
+        return $this;
+    }
+
+    public function getEtat(): ?string
+    {
+        return $this->etat;
+    }
+
+    public function setEtat(string $etat): self
+    {
+        $this->etat = $etat;
+
+        return $this;
+    }
+
+    public function getQuantite(): ?string
+    {
+        return $this->quantite;
+    }
+
+    public function setQuantite(string $quantite): self
+    {
+        $this->quantite = $quantite;
 
         return $this;
     }
