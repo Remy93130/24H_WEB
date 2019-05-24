@@ -14,7 +14,6 @@ class TestDatabaseController extends AbstractController
     public function index(TestDatabaseRepository $repo)
     {
         return $this->render('test_database/index.html.twig', [
-            'controller_name' => 'TestDatabaseController',
 	    'tests' => $repo->findAll(),
         ]);
     }
