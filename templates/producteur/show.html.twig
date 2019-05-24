@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Producteur{% endblock %}
+
+{% block body %}
+    <h1>Producteur</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ producteur.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ producteur.nom }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ producteur.description }}</td>
+            </tr>
+            <tr>
+                <th>Drapeau</th>
+                <td>{{ producteur.drapeau }}</td>
+            </tr>
+            <tr>
+                <th>Capitale</th>
+                <td>{{ producteur.capitale }}</td>
+            </tr>
+            <tr>
+                <th>Habitant</th>
+                <td>{{ producteur.habitant }}</td>
+            </tr>
+            <tr>
+                <th>Surface</th>
+                <td>{{ producteur.surface }}</td>
+            </tr>
+            <tr>
+                <th>Tonne</th>
+                <td>{{ producteur.tonne }}</td>
+            </tr>
+            <tr>
+                <th>Pourcent</th>
+                <td>{{ producteur.pourcent }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('producteur_index') }}">back to list</a>
+
+    <a href="{{ path('producteur_edit', {'id': producteur.id}) }}">edit</a>
+
+    {{ include('producteur/_delete_form.html.twig') }}
+{% endblock %}

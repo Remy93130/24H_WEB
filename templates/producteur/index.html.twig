@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Producteur index{% endblock %}
+
+{% block body %}
+    <h1>Producteur index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Drapeau</th>
+                <th>Capitale</th>
+                <th>Habitant</th>
+                <th>Surface</th>
+                <th>Tonne</th>
+                <th>Pourcent</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for producteur in producteurs %}
+            <tr>
+                <td>{{ producteur.nom }}</td>
+                <!-- <td>{{ producteur.description }}</td> -->
+                <td><img src="{{ producteur.drapeau }}" style="width: 25%"></td>
+                <td>{{ producteur.capitale }}</td>
+                <td>{{ producteur.habitant }}</td>
+                <td>{{ producteur.surface }}km²</td>
+                <td>{{ producteur.tonne }}</td>
+                <td>{{ producteur.pourcent }}%</td>
+                <td>
+                    <a href="{{ path('producteur_edit', {'id': producteur.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="10">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('producteur_new') }}">Create new</a>
+{% endblock %}
