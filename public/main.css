@@ -1873,7 +1873,6 @@ a {
 }
 #background {
   position: fixed;
-  bottom: 0;
   left: 0;
   width: 100vw;
   z-index: -1;
@@ -1892,81 +1891,61 @@ a {
   height: 100px;
   background-color: #277229;
 }
-#visualize-table {
   border-collapse: collapse;
   box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.3);
 }
-#visualize-table thead {
   border-radius: 2px 2px 0 0;
 }
-#visualize-table thead th {
   font-weight: 400;
   padding: 3px 5px;
   background-color: #277229;
   font-family: 'BOLD';
   color: #FFFFFF;
 }
-#visualize-table thead th:first-child {
   border-radius: 2px 0 0 0;
 }
-#visualize-table thead th:last-child {
   border-radius: 0 2px 0 0;
 }
-#visualize-table tbody {
   border-radius: 2px;
 }
-#visualize-table tbody td {
   font-family: 'REGULAR';
   padding: 1px 2px 1px 4px;
 }
-#visualize-table tbody tr {
   cursor: pointer;
 }
-#visualize-table tbody tr:hover {
   background-color: #A57334 !important;
   color: #FFFFFF;
 }
-#visualize-table tbody tr:nth-child(odd) {
   background-color: #E7E7E7;
 }
-#visualize-table tbody tr:last-child {
   border-radius: 0 0 2px 2px;
 }
-#visualize-table tbody tr:last-child > td:first-child {
   border-radius: 0 0 0 2px;
 }
-#visualize-table tbody tr:last-child > td:last-child {
   border-radius: 0 0 2px 0;
 }
-#visualize-table tbody tr .flag {
   text-align: center;
   padding-top: 4px;
 }
-#visualize-table tbody tr .flag img {
   height: 20px;
 }
 #visualize-table tbody tr .percent,
-#visualize-table tbody tr .heavy {
   text-align: center;
 }
-#visualize-table tbody tr .edit {
   padding-top: 4px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
-#visualize-table tbody tr .edit .link {
   width: 25px;
   background-color: #319D34;
   border-radius: 1px;
   text-align: center;
   padding-top: 2px;
 }
-#visualize-table tbody tr .edit .link:hover {
   background: #277229;
 }
-#visualize-table tbody tr .edit .link img {
   height: 15px;
 }
 .cafe-button {

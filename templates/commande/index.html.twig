@@ -3,37 +3,60 @@
 {% block title %}Commande index{% endblock %}
 
 {% block body %}
-    <h1>Commande index</h1>
+    <div class="padding-L">
+        <table class="table" id='commands-table'>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Etat</th>
+                    <th>Quantite</th>
+                    <th>actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for commande in commandes %}
+                <tr onclick='showCommandModal({{ commande.id }})'>  
+                    <td>{{ commande.date ? commande.date|date('Y-m-d H:i:s') : '' }}</td>
+                    <td>{{ commande.etat }}</td>
+                    <td>{{ commande.quantite }}</td>
+                    <td>
+                        <a href="{{ path('commande_edit', {'id': commande.id}) }}">Editer</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="5">no records found</td>
+                </tr>
+            {% endfor %}
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Date</th>
-                <th>Etat</th>
-                <th>Quantite</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for commande in commandes %}
-            <tr>
-                <td>{{ commande.id }}</td>
-                <td>{{ commande.date ? commande.date|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ commande.etat }}</td>
-                <td>{{ commande.quantite }}</td>
-                <td>
-                    <a href="{{ path('commande_show', {'id': commande.id}) }}">show</a>
-                    <a href="{{ path('commande_edit', {'id': commande.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="5">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('commande_new') }}">Create new</a>
+            </tbody>
+        </table>
+    </div>
+    <div class="padding-l-L">
+        <a href="{{ path('commande_new') }}"><div class="cafe-button">Nouvelle commande</div></a>
+    </div>
+    {% for commande in commandes %}
+        <div class="modal-custom hidden" id="command-{{ commande.id }}">
+            <div class="content">
+                <div class="head">
+                    <p>Commande du {{ commande.date ? commande.date|date('Y-m-d H:i:s') : '' }}</p>
+                    <div class="close" onclick="closeCurrent()"></div>
+                </div>
+                <div class="body">
+                    <div class="informations-commande">
+                        <p class="title">Etat</p>
+                        <p>{{ commande.etat }}</p>
+                        <p class="title">Quantité</p>
+                        <p>{{ commande.quantite }}</p>
+                        <p class='title'>Nom du café</p>
+                        <p>{{ commande.cafe.nom }}</p>
+                        <p class="title">Vendeur</p>
+                        <p>{{ commande.vendeur }}</p>
+                        <p class="title">Type de café</p>
+                        <p>{{ commande.cafe.type }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
 {% endblock %}
