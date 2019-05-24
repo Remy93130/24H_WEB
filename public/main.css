@@ -1944,17 +1944,17 @@ a {
   justify-content: center;
   align-items: center;
 }
-#visualize-table tbody tr .edit > div {
+#visualize-table tbody tr .edit .link {
   width: 25px;
   background-color: #319D34;
   border-radius: 1px;
   text-align: center;
   padding-top: 2px;
 }
-#visualize-table tbody tr .edit > div:hover {
+#visualize-table tbody tr .edit .link:hover {
   background: #277229;
 }
-#visualize-table tbody tr .edit > div img {
+#visualize-table tbody tr .edit .link img {
   height: 15px;
 }
 .cafe-button {
@@ -1969,17 +1969,20 @@ a {
 .cafe-button:hover {
   background-color: #277229;
 }
+.cafe-button.red {
+  background-color: #FF4956;
+}
+.cafe-button.red:hover {
+  background-color: #fb0012;
+}
 .modal-custom {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: start;
-  width: 100vw;
-  height: 100vh;
   position: fixed;
-  top: 0;
-  left: 0;
-  padding-top: 100px;
+  top: 80px;
+  right: 20px;
 }
 .modal-custom.hidden {
   display: none;
@@ -2100,110 +2103,121 @@ a {
 .pre-wrap {
   white-space: pre-wrap;
 }
-.form-container form {
+.form-container {
+  margin-bottom: 20px;
+}
+.form-container .form-shape {
   width: 400px;
   box-shadow: 0 1px 3px 0px rgba(0, 0, 0, 0.4);
 }
-.form-container form .head {
+.form-container .form-shape .head {
   background-color: #277229;
   color: white;
   padding: 5px 7px;
   font-family: 'BOLD';
 }
-.form-container form label {
+.form-container .form-shape form .alert {
+  padding: 10px;
+  color: white;
+  background-color: #FF4956;
+  font-family: 'BOLD';
+}
+.form-container .form-shape form label {
   width: 100%;
   font-family: 'BOLD';
 }
-.form-container form #producteur,
-.form-container form #connexion,
-.form-container form #registration_form {
+.form-container .form-shape form #producteur,
+.form-container .form-shape form #connexion,
+.form-container .form-shape form #registration_form {
   padding: 10px;
 }
-.form-container form #producteur > div,
-.form-container form #connexion > div,
-.form-container form #registration_form > div {
+.form-container .form-shape form #producteur > div,
+.form-container .form-shape form #connexion > div,
+.form-container .form-shape form #registration_form > div {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
 }
-.form-container form #producteur > div label,
-.form-container form #connexion > div label,
-.form-container form #registration_form > div label {
+.form-container .form-shape form #producteur > div label,
+.form-container .form-shape form #connexion > div label,
+.form-container .form-shape form #registration_form > div label {
   width: 100%;
 }
-.form-container form #producteur > div input,
-.form-container form #connexion > div input,
-.form-container form #registration_form > div input,
-.form-container form #producteur > div textarea,
-.form-container form #connexion > div textarea,
-.form-container form #registration_form > div textarea {
+.form-container .form-shape form #producteur > div input,
+.form-container .form-shape form #connexion > div input,
+.form-container .form-shape form #registration_form > div input,
+.form-container .form-shape form #producteur > div textarea,
+.form-container .form-shape form #connexion > div textarea,
+.form-container .form-shape form #registration_form > div textarea {
   width: 100%;
 }
-.form-container form #producteur > div:nth-child(n + 2),
-.form-container form #connexion > div:nth-child(n + 2),
-.form-container form #registration_form > div:nth-child(n + 2) {
+.form-container .form-shape form #producteur > div:nth-child(n + 2),
+.form-container .form-shape form #connexion > div:nth-child(n + 2),
+.form-container .form-shape form #registration_form > div:nth-child(n + 2) {
   margin-top: 10px;
 }
-.form-container form #producteur label,
-.form-container form #connexion label,
-.form-container form #registration_form label {
+.form-container .form-shape form #producteur label,
+.form-container .form-shape form #connexion label,
+.form-container .form-shape form #registration_form label {
   width: 100%;
   margin-bottom: 5px;
 }
-.form-container form #producteur input,
-.form-container form #connexion input,
-.form-container form #registration_form input {
+.form-container .form-shape form #producteur input,
+.form-container .form-shape form #connexion input,
+.form-container .form-shape form #registration_form input {
   height: 30px;
 }
-.form-container form #producteur select,
-.form-container form #connexion select,
-.form-container form #registration_form select {
+.form-container .form-shape form #producteur select,
+.form-container .form-shape form #connexion select,
+.form-container .form-shape form #registration_form select {
   border: 1px solid #C2C2C2;
   border-bottom: 2px solid #C2C2C2;
   border-radius: 3px;
   padding: 5px 8px;
 }
-.form-container form #producteur select:focus,
-.form-container form #connexion select:focus,
-.form-container form #registration_form select:focus {
+.form-container .form-shape form #producteur select:focus,
+.form-container .form-shape form #connexion select:focus,
+.form-container .form-shape form #registration_form select:focus {
   border-bottom-color: #319D34;
 }
-.form-container form #producteur input,
-.form-container form #connexion input,
-.form-container form #registration_form input,
-.form-container form #producteur textarea,
-.form-container form #connexion textarea,
-.form-container form #registration_form textarea {
+.form-container .form-shape form #producteur input,
+.form-container .form-shape form #connexion input,
+.form-container .form-shape form #registration_form input,
+.form-container .form-shape form #producteur textarea,
+.form-container .form-shape form #connexion textarea,
+.form-container .form-shape form #registration_form textarea {
   border: 1px solid #C2C2C2;
   border-bottom: 2px solid #C2C2C2;
   border-radius: 3px;
   padding: 5px 8px;
 }
-.form-container form #producteur input:focus,
-.form-container form #connexion input:focus,
-.form-container form #registration_form input:focus,
-.form-container form #producteur textarea:focus,
-.form-container form #connexion textarea:focus,
-.form-container form #registration_form textarea:focus {
+.form-container .form-shape form #producteur input:focus,
+.form-container .form-shape form #connexion input:focus,
+.form-container .form-shape form #registration_form input:focus,
+.form-container .form-shape form #producteur textarea:focus,
+.form-container .form-shape form #connexion textarea:focus,
+.form-container .form-shape form #registration_form textarea:focus {
   border-bottom-color: #319D34;
 }
-.form-container form #producteur textarea,
-.form-container form #connexion textarea,
-.form-container form #registration_form textarea {
+.form-container .form-shape form #producteur textarea,
+.form-container .form-shape form #connexion textarea,
+.form-container .form-shape form #registration_form textarea {
   resize: none;
+  font-family: 'REGULAR';
+  font-size: 14px;
 }
-.form-container form .button-container {
+.form-container .form-shape form .button-container {
   display: flex;
   flex-wrap: wrap;
   padding: 10px;
   width: 100%;
   justify-content: center;
 }
-.form-container form .button-container > * {
+.form-container .form-shape form .button-container > * {
   margin-left: 5px;
   margin-right: 5px;
 }
-.form-container form button {
+.form-container .form-shape form button {
   border: none;
   font-size: 16px;
 }
