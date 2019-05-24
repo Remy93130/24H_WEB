@@ -2383,3 +2383,27 @@ a {
 .select2-results * {
   font-family: 'REGULAR';
 }
+#about {
+  padding: 30px;
+  display: flex;
+  flex-wrap: wrap;
+}
+#about img {
+  width: 150px;
+  height: 150px;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px 0px rgba(0, 0, 0, 0.4);
+}
+#about p {
+  white-space: pre-wrap;
+  font-family: 'REGULAR';
+  padding-left: 30px;
+}
+#about p strong {
+  background-color: #319D34;
+  border-radius: 2px;
+  padding: 0 2px;
+  font-family: 'BOLD';
+  color: white;
+  font-weight: 400;
+}
