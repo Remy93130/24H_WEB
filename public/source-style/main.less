@@ -22,7 +22,7 @@
 @cafe_dark:#815A29;
 
 .little-shadow() {
-	box-shadow:0 1px 3px 1px rgba(0, 0, 0, 0.2);
+	box-shadow:0 1px 3px 0px rgba(0, 0, 0, 0.4);
 }
 
 a {
@@ -190,7 +190,7 @@ a {
 			font-family:'REGULAR';
 			.information {
 				padding:10px;
-				.row-t-c();
+				.row-c-c();
 				.flag { 
 					width:50px;
 				}
@@ -209,6 +209,24 @@ a {
 				& > div {
 					width:50%;
 					text-align:center;
+				}
+			}
+			.coffee-level {
+				padding:10px;
+				.title { text-align:center; }
+				.names { 
+					.row(); .split();
+					.robusta { color:@red; }
+					.arabica { color:@blue; }
+					font-family:'BOLD';
+				}
+
+				.level {
+					.little-shadow();
+					width:100%;
+					height:20px;
+					background-color:@blue;
+					.value { background-color: @red; height:100%; }
 				}
 			}
 			.description {

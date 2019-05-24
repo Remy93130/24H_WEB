@@ -53,7 +53,7 @@
                 </div>
                 <div class="body">
                     <div class="information">
-                        <img src="{{ asset('pics/loupe.svg') }}" alt="" class="flag">
+                        <img src="{{ producteur.drapeau }}" alt="" class="flag">
                         <div class="text">
                             <div>
                                 <p class="title">Capitale</p>
@@ -69,10 +69,20 @@
                             </div>
                         </div>
                     </div>
+                    <div class="coffee-level">
+                        <p class='title'>Parts de type de café vendu</p>
+                        <div class="names">
+                            <p class='robusta'>Robusta</p>
+                            <p class='arabica'>Arabica</p>
+                        </div>
+                        <div class="level">
+                            <div class="value" style='width:{{ producteur.robusta }}%'></div>
+                        </div>
+                    </div>
                     <div class="numbers">
                         <div>
-                            <p class="title">Masse vendue</p>
-                            <p>{{ producteur.tonne }}K t</p>
+                            <p class="title">Masse vendue (tonnes)</p>
+                            <p>{{ producteur.tonne }} K</p>
                         </div>
                         <div>
                             <p class="title">Part de marché</p>
