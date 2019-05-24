@@ -10,7 +10,9 @@
                     <th>Date</th>
                     <th>Etat</th>
                     <th>Quantite</th>
+                    {% if app.user.type == 'exportateur' %}
                     <th>actions</th>
+                    {% endif %}
                 </tr>
             </thead>
             <tbody>
@@ -19,9 +21,11 @@
                     <td>{{ commande.date ? commande.date|date('Y-m-d H:i:s') : '' }}</td>
                     <td>{{ commande.etat }}</td>
                     <td>{{ commande.quantite }}</td>
+                    {% if app.user.type == 'exportateur' %}
                     <td>
-                        <a href="{{ path('commande_edit', {'id': commande.id}) }}">Editer</a>
+                        <a href="{{ path('commande_edit', {'id': commande.id}) }}"><div class="cafe-button">Editer</div></a>
                     </td>
+                    {% endif %}
                 </tr>
             {% else %}
                 <tr>
@@ -43,7 +47,7 @@
                     <div class="close" onclick="closeCurrent()"></div>
                 </div>
                 <div class="body">
-                    <div class="informations-commande">
+                    <div class="informations-commande space-v-s">
                         <p class="title">Etat</p>
                         <p>{{ commande.etat }}</p>
                         <p class="title">Quantité</p>
@@ -51,9 +55,9 @@
                         <p class='title'>Nom du café</p>
                         <p>{{ commande.cafe.nom }}</p>
                         <p class="title">Vendeur</p>
-                        <p>{{ commande.vendeur }}</p>
+                        <p>{{ commande.vendeur.entreprise }}</p>
                         <p class="title">Type de café</p>
-                        <p>{{ commande.cafe.type }}</p>
+                        <p>{{ commande.cafe.type|capitalize }}</p>
                     </div>
                 </div>
             </div>
