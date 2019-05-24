@@ -109,12 +109,14 @@ class CommandeController extends AbstractController
 
             return $this->redirectToRoute('commande_index', [
                 'id' => $commande->getId(),
+                'erreur' => false,
             ]);
         }
 
         return $this->render('commande/edit.html.twig', [
             'commande' => $commande,
             'form' => $form->createView(),
+            'erreur' => false,
         ]);
     }
 
