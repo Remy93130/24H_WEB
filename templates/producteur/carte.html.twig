@@ -2,13 +2,17 @@
 
 {% block title %}Producteur index{% endblock %}
 
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"/>
+{% endblock %}
 {% block body %}
-    <div id="map"></div>
+    <div id="map" style="width: 90%"></div>
 {% endblock %}
 
 {% block javascripts %}
     {{ parent() }}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
-    <script src="{{ asset("map.js") }}"
+    <script src="{{ asset("map.js") }}"></script>
 {% endblock %}

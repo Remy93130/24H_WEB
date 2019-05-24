@@ -107,7 +107,7 @@ class ProducteurController extends AbstractController
     }
 
     /**
-     * @Route("/api/producteurs", name="producteur_get", methods={"GET"})
+     * @Route("/carte/show/producteurs", name="producteur_get", methods={"GET"})
      * @param ProducteurRepository $repository
      * @return Response
      */

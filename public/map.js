@@ -10,7 +10,7 @@ function initMap() {
 
 function getLocations(map) {
     $.get(
-        "index.php/producteur/api/producteurs", {},
+        "show/producteurs", {},
         (locations) => {
             putMarker(map, locations);
         });
