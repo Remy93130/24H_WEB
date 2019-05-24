@@ -1,35 +1,12 @@
-function initMap() {
-    let map = L.map('map').setView([48.852969, 2.349903], 9);
-    L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
-        attribution: '© <a href="http://openstreetmap.fr">OpenStreetMap</a> contributors',
-        minZoom: 1,
-        maxZoom: 20
-    }).addTo(map);
-    getLocations(map);
-}
+var mymap = L.map('mapid').setView([21.505, -0.09], 2);
 
-function getLocations(map) {
-    $.get(
-        "show/producteurs", {},
-        (locations) => {
-            putMarker(map, locations);
-        });
-}
+L.tileLayer('https://api.tiles.mapbox.com/v4/%7Bid%7D/%7Bz%7D/%7Bx%7D/%7By%7D.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+    maxZoom: 18,
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/%22%3EOpenStreetMap</a> contributors, ' +
+        '<a href="https://creativecommons.org/licenses/by-sa/2.0/%22%3ECC-BY-SA</a>, ' +
+        'Imagery © <a href="https://www.mapbox.com/%22%3EMapbox</a>',
+    id: 'mapbox.streets'
+}).addTo(mymap);
 
-function putMarker(map, iuts) {
-    let markers = [];
-    for (var i = 0 in iuts) {
-        let lon = iuts[i]['lon'];
-        let lat = iuts[i]['lat'];
-        let content = iuts[i]['content'];
-        let mark = L.marker([lon, lat]).addTo(map);
-        markers.push(mark);
-        mark.bindPopup(content);
-    }
-    let group = new L.featureGroup(markers);
-    map.fitBounds(group.getBounds());
-}
-
-window.onload = function(){
-    initMap();
-};
+var marker = L.marker([51.5, -0.09]).addTo(mymap);
+marker.bindPopup("<div class='popup'></div>");

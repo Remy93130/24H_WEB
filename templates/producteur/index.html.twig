@@ -4,92 +4,9 @@
 
 {% block body %}
     
-    <div class="column-c-l w100p padding-l-L space-v-S">
-        <table class="table" id='visualize-table'>
-            <thead>
-                <tr>
-                    <th>Nom</th>
-                    <th>Drapeau</th>
-                    <th>Tonne</th>
-                    <th>Pourcent</th>
-                    <th>actions</th>
-                </tr>
-            </thead>
-            <tbody>
-            {% for producteur in producteurs %}
-                <tr onclick='showVisualizeInformationModal({{ producteur.id }})'>
-                    <td class='producer'>{{ producteur.nom }}</td>
-                    <td class='flag'><img src="{{ producteur.drapeau }}"></td>
-                    <td class='heavy'>{{ producteur.tonne }}</td>
-                    <td class='percent'>{{ producteur.pourcent }}%</td>
-                    <td class='edit' onclick='showVisualizationEditModal( {{ path('producteur_edit', {'id': producteur.id}) }} )'>
-                        <div>
-                            <img src="{{ asset('pics/loupe.svg') }}">
-                        </div>
-                    </td>
-                </tr>
-            {% else %}
-                <tr>
-                    <td colspan="10">no records found</td>
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
-        <a href="{{ path('producteur_new') }}"><div class='cafe-button'>Créer</div></a>
-    </div>
-    {% for producteur in producteurs %}
-        <div class="modal-custom hidden" id="info-{{ producteur.id }}">
-            <div class="content">
-                <div class="head">
-                    <p>{{ producteur.nom }}</p>
-                    <div class="close" onclick='closeModal("info-{{ producteur.id }}")'></div>
-                </div>
-                <div class="body">
-                    <div class="information">
-                        <img src="{{ producteur.drapeau }}" alt="" class="flag">
-                        <div class="text">
-                            <div>
-                                <p class="title">Capitale</p>
-                                <p>{{ producteur.capitale }}</p>
-                            </div>
-                            <div>
-                                <p class='title'>Habitants</p>
-                                <p>{{ producteur.habitant }}</p>
-                            </div>
-                            <div>
-                                <p class='title'>Surface</p>
-                                <p>{{ producteur.surface }} km²</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="coffee-level">
-                        <p class='title'>Parts de type de café vendu</p>
-                        <div class="names">
-                            <p class='robusta'>Robusta</p>
-                            <p class='arabica'>Arabica</p>
-                        </div>
-                        <div class="level">
-                            <div class="value" style='width:{{ producteur.robusta }}%'></div>
-                        </div>
-                    </div>
-                    <div class="numbers">
-                        <div>
-                            <p class="title">Masse vendue (tonnes)</p>
-                            <p>{{ producteur.tonne }} K</p>
-                        </div>
-                        <div>
-                            <p class="title">Part de marché</p>
-                            <p>{{ producteur.pourcent }}%</p>
-                        </div>
-                    </div>
-                    <div class="description">{{ producteur.description }}</div>
-                </div>
-            </div>
-        </div>
-    {% else %}
-        <tr>
-            <td colspan="10">no records found</td>
-        </tr>
-    {% endfor %}
+
+    <div id="mapid"></div>
+
+
     
 {% endblock %}

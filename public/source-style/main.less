@@ -114,7 +114,7 @@ a {
 
 #body {
 	margin-top:@navbar_height;
-	min-height:calc(100% - @navbar_height);
+	min-height:calc(100% - @navbar_height) !important;
 	padding-top:20px;
 }
 #footer {
@@ -389,4 +389,9 @@ a {
 		width:10px;
 		transform:translate(10px, 8px) rotate(-45deg);
 	}
+}
+
+#mapid {
+	width:100%;
+	height:400px;
 }
