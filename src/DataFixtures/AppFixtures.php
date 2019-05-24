@@ -5,6 +5,7 @@ namespace App\DataFixtures;
 use App\Entity\Cafe;
 use App\Entity\Commande;
 use App\Entity\Producteur;
+use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 
@@ -298,11 +299,21 @@ class AppFixtures extends Fixture
 
     private function cafeFixtures(ObjectManager $manager)
     {
+        $seller = new User();
+        $seller
+            ->setEntreprise("Entr test")
+            ->setAdresse("a")
+            ->setType("exportateur")
+            ->setEmail("a")
+            ->setPassword("a")
+            ->setTelephone("aa")
+        ;
+        $manager->persist($seller);
         for ($i = 0; $i < 20; $i++) {
             $cafe = new Cafe();
             $cafe
                 ->setType("arabica")
-                ->setProprietaire(null)
+                ->setProprietaire($seller)
                 ->setNom("Café de chez nous")
                 ->setProvenance(null)
                 ->setStock(123)

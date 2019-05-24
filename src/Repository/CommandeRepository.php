@@ -19,6 +19,26 @@ class CommandeRepository extends ServiceEntityRepository
         parent::__construct($registry, Commande::class);
     }
 
+    public function findCommandeByBuyer($buyer)
+    {
+        return $this->createQueryBuilder('c')
+            ->andWhere("c.acheteur = :val")
+            ->setParameter('val', $buyer)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
+    public function findCommandeBySeller($seller)
+    {
+        return $this->createQueryBuilder('c')
+            ->andWhere("c.vendeur = :val")
+            ->setParameter('val', $seller)
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
     // /**
     //  * @return Commande[] Returns an array of Commande objects
     //  */

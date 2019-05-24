@@ -20,8 +20,15 @@ class CommandeController extends AbstractController
      */
     public function index(CommandeRepository $commandeRepository): Response
     {
+        if ($this->getUser() == null) {
+            return $this->redirectToRoute('index');
+        } elseif ($this->getUser()->getType() == "importateur") {
+            $data = $commandeRepository->findCommandeByBuyer($this->getUser());
+        } else {
+            $data = $commandeRepository->findCommandeBySeller($this->getUser());
+        }
         return $this->render('commande/index.html.twig', [
-            'commandes' => $commandeRepository->findAll(),
+            'commandes' => $data,
         ]);
     }
 
@@ -31,10 +38,12 @@ class CommandeController extends AbstractController
     public function new(Request $request): Response
     {
         $commande = new Commande();
+        $commande->setAcheteur($this->getUser());
         $form = $this->createForm(CommandeType::class, $commande);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $commande->setVendeur($commande->getCafe()->getProprietaire());
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($commande);
             $entityManager->flush();
