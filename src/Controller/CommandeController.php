@@ -56,6 +56,8 @@ class CommandeController extends AbstractController
                 return $this->redirectToRoute("commande_new");
             }
 
+            $commande->getCafe()->setStock($commande->getCafe()->getStock() - $commande->getQuantite());
+
             $commande->setVendeur($commande->getCafe()->getProprietaire());
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($commande);
