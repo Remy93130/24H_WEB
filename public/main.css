@@ -1781,8 +1781,13 @@ a {
   top: 0;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
-#navbar .title {
+#navbar .start {
+  display: flex;
+  flex-wrap: wrap;
+}
+#navbar .start .title {
   height: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -1791,19 +1796,19 @@ a {
   border-right: 2px solid #205D22;
   padding: 0 20px 0 10px;
 }
-#navbar .title:hover {
+#navbar .start .title:hover {
   background-color: #277229;
 }
-#navbar .title img {
+#navbar .start .title img {
   height: 30px;
   width: 30px;
   margin-right: 10px;
 }
-#navbar .title p {
+#navbar .start .title p {
   font-family: 'BOLD';
   color: #FFFFFF;
 }
-#navbar .item {
+#navbar .start .item {
   padding: 0 10px;
   display: flex;
   flex-wrap: wrap;
@@ -1812,17 +1817,59 @@ a {
   height: 100%;
   cursor: pointer;
 }
-#navbar .item:hover {
+#navbar .start .item:hover {
   background-color: #277229;
 }
-#navbar .item img {
+#navbar .start .item img {
   height: 20px;
   width: 20px;
   margin-right: 10px;
 }
-#navbar .item p {
+#navbar .start .item p {
   color: #FFFFFF;
   font-family: 'REGULAR';
+}
+#navbar .end {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  height: 100%;
+}
+#navbar .end .logout {
+  box-shadow: 0 1px 3px 0px rgba(0, 0, 0, 0.4);
+  background-color: #FF4956;
+  padding: 10px;
+  border-radius: 3px;
+  color: white;
+  font-family: 'REGULAR';
+  cursor: pointer;
+}
+#navbar .end .logout:hover {
+  background-color: #fb0012;
+}
+#navbar .end .signin {
+  border: 2px solid #277229;
+  padding: 10px;
+  color: white;
+  border-radius: 3px;
+  font-family: 'BOLD';
+  cursor: pointer;
+}
+#navbar .end .signin:hover {
+  background-color: #277229;
+}
+#navbar .end .login {
+  padding: 10px;
+  border-radius: 3px;
+  color: white;
+  font-family: 'REGULAR';
+  cursor: pointer;
+  margin-right: 10px;
+}
+#navbar .end .login:hover {
+  background-color: #277229;
 }
 #body {
   margin-top: 60px;
@@ -2067,34 +2114,82 @@ a {
   width: 100%;
   font-family: 'BOLD';
 }
-.form-container form #producteur {
+.form-container form #producteur,
+.form-container form #connexion,
+.form-container form #registration_form {
   padding: 10px;
 }
-.form-container form #producteur > div label {
+.form-container form #producteur > div,
+.form-container form #connexion > div,
+.form-container form #registration_form > div {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.form-container form #producteur > div label,
+.form-container form #connexion > div label,
+.form-container form #registration_form > div label {
   width: 100%;
 }
 .form-container form #producteur > div input,
-.form-container form #producteur > div textarea {
+.form-container form #connexion > div input,
+.form-container form #registration_form > div input,
+.form-container form #producteur > div textarea,
+.form-container form #connexion > div textarea,
+.form-container form #registration_form > div textarea {
   width: 100%;
 }
-.form-container form #producteur > div:nth-child(n + 2) {
+.form-container form #producteur > div:nth-child(n + 2),
+.form-container form #connexion > div:nth-child(n + 2),
+.form-container form #registration_form > div:nth-child(n + 2) {
   margin-top: 10px;
 }
-.form-container form #producteur input {
-  height: 30px;
+.form-container form #producteur label,
+.form-container form #connexion label,
+.form-container form #registration_form label {
+  width: 100%;
+  margin-bottom: 5px;
 }
 .form-container form #producteur input,
-.form-container form #producteur textarea {
+.form-container form #connexion input,
+.form-container form #registration_form input {
+  height: 30px;
+}
+.form-container form #producteur select,
+.form-container form #connexion select,
+.form-container form #registration_form select {
+  border: 1px solid #C2C2C2;
+  border-bottom: 2px solid #C2C2C2;
+  border-radius: 3px;
+  padding: 5px 8px;
+}
+.form-container form #producteur select:focus,
+.form-container form #connexion select:focus,
+.form-container form #registration_form select:focus {
+  border-bottom-color: #319D34;
+}
+.form-container form #producteur input,
+.form-container form #connexion input,
+.form-container form #registration_form input,
+.form-container form #producteur textarea,
+.form-container form #connexion textarea,
+.form-container form #registration_form textarea {
   border: 1px solid #C2C2C2;
   border-bottom: 2px solid #C2C2C2;
   border-radius: 3px;
   padding: 5px 8px;
 }
 .form-container form #producteur input:focus,
-.form-container form #producteur textarea:focus {
+.form-container form #connexion input:focus,
+.form-container form #registration_form input:focus,
+.form-container form #producteur textarea:focus,
+.form-container form #connexion textarea:focus,
+.form-container form #registration_form textarea:focus {
   border-bottom-color: #319D34;
 }
-.form-container form #producteur textarea {
+.form-container form #producteur textarea,
+.form-container form #connexion textarea,
+.form-container form #registration_form textarea {
   resize: none;
 }
 .form-container form .button-container {
