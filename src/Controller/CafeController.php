@@ -24,7 +24,6 @@ class CafeController extends AbstractController
     {
         return $this->render('cafe/index.html.twig', [
             'cafes' => $cafeRepository->findCoffeeByOwner($this->getUser()),
-            //'cafes' => $cafeRepository->findAll(),
         ]);
     }
 

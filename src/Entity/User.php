@@ -62,9 +62,15 @@ class User implements UserInterface
      */
     private $cafes;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Commande", mappedBy="exportateur")
+     */
+    private $commandes;
+
     public function __construct()
     {
         $this->cafes = new ArrayCollection();
+        $this->commandes = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -218,6 +224,37 @@ class User implements UserInterface
             // set the owning side to null (unless already changed)
             if ($cafe->getProprietaire() === $this) {
                 $cafe->setProprietaire(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Commande[]
+     */
+    public function getCommandes(): Collection
+    {
+        return $this->commandes;
+    }
+
+    public function addCommande(Commande $commande): self
+    {
+        if (!$this->commandes->contains($commande)) {
+            $this->commandes[] = $commande;
+            $commande->setExportateur($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCommande(Commande $commande): self
+    {
+        if ($this->commandes->contains($commande)) {
+            $this->commandes->removeElement($commande);
+            // set the owning side to null (unless already changed)
+            if ($commande->getExportateur() === $this) {
+                $commande->setExportateur(null);
             }
         }
 

@@ -5,7 +5,6 @@ namespace App\DataFixtures;
 use App\Entity\Producteur;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
-use App\Entity\TestDatabase;
 use Faker\Factory;
 
 class AppFixtures extends Fixture
@@ -256,7 +255,7 @@ class AppFixtures extends Fixture
                 'long' => 46.760122,
             ),
         );
-        for ($producteurs as $country) {
+        foreach ($producteurs as $country) {
 		$producteur = new Producteur();
 		$producteur
 			->setNom($country['name'])
