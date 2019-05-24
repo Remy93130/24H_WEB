@@ -24,6 +24,7 @@ class CafeRepository extends ServiceEntityRepository
         return $this->createQueryBuilder('c')
             ->andWhere('c.proprietaire = :val')
             ->setParameter('val', $owner)
+            ->orderBy("c.type", "ASC")
             ->getQuery()
             ->getResult()
         ;

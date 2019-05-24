@@ -22,6 +22,11 @@ class CafeController extends AbstractController
      */
     public function index(CafeRepository $cafeRepository): Response
     {
+        if ($this->getUser() == null|| $this->getUser()->getType() == "importateur") {
+            return $this->render('cafe/index.html.twig', [
+                "cafes" => $cafeRepository->findAll(),
+            ]);
+        }
         return $this->render('cafe/index.html.twig', [
             'cafes' => $cafeRepository->findCoffeeByOwner($this->getUser()),
         ]);
