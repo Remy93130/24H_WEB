@@ -1860,15 +1860,18 @@ a {
 #navbar .end .signin:hover {
   background-color: #277229;
 }
-#navbar .end .login {
+#navbar .end .login,
+#navbar .end .about {
   padding: 10px;
   border-radius: 3px;
   color: white;
   font-family: 'REGULAR';
   cursor: pointer;
   margin-right: 10px;
+  margin-left: 10px;
 }
-#navbar .end .login:hover {
+#navbar .end .login:hover,
+#navbar .end .about:hover {
   background-color: #277229;
 }
 #background {
@@ -2185,48 +2188,57 @@ a {
 }
 .form-container .form-shape form #producteur,
 .form-container .form-shape form #connexion,
-.form-container .form-shape form #registration_form {
+.form-container .form-shape form #registration_form,
+.form-container .form-shape form #commande {
   padding: 10px;
 }
 .form-container .form-shape form #producteur > div,
 .form-container .form-shape form #connexion > div,
-.form-container .form-shape form #registration_form > div {
+.form-container .form-shape form #registration_form > div,
+.form-container .form-shape form #commande > div {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
 }
 .form-container .form-shape form #producteur > div label,
 .form-container .form-shape form #connexion > div label,
-.form-container .form-shape form #registration_form > div label {
+.form-container .form-shape form #registration_form > div label,
+.form-container .form-shape form #commande > div label {
   width: 100%;
 }
 .form-container .form-shape form #producteur > div input,
 .form-container .form-shape form #connexion > div input,
 .form-container .form-shape form #registration_form > div input,
+.form-container .form-shape form #commande > div input,
 .form-container .form-shape form #producteur > div textarea,
 .form-container .form-shape form #connexion > div textarea,
-.form-container .form-shape form #registration_form > div textarea {
+.form-container .form-shape form #registration_form > div textarea,
+.form-container .form-shape form #commande > div textarea {
   width: 100%;
 }
 .form-container .form-shape form #producteur > div:nth-child(n + 2),
 .form-container .form-shape form #connexion > div:nth-child(n + 2),
-.form-container .form-shape form #registration_form > div:nth-child(n + 2) {
+.form-container .form-shape form #registration_form > div:nth-child(n + 2),
+.form-container .form-shape form #commande > div:nth-child(n + 2) {
   margin-top: 10px;
 }
 .form-container .form-shape form #producteur label,
 .form-container .form-shape form #connexion label,
-.form-container .form-shape form #registration_form label {
+.form-container .form-shape form #registration_form label,
+.form-container .form-shape form #commande label {
   width: 100%;
   margin-bottom: 5px;
 }
 .form-container .form-shape form #producteur input,
 .form-container .form-shape form #connexion input,
-.form-container .form-shape form #registration_form input {
+.form-container .form-shape form #registration_form input,
+.form-container .form-shape form #commande input {
   height: 30px;
 }
 .form-container .form-shape form #producteur select,
 .form-container .form-shape form #connexion select,
-.form-container .form-shape form #registration_form select {
+.form-container .form-shape form #registration_form select,
+.form-container .form-shape form #commande select {
   border: 1px solid #C2C2C2;
   border-bottom: 2px solid #C2C2C2;
   border-radius: 3px;
@@ -2234,15 +2246,18 @@ a {
 }
 .form-container .form-shape form #producteur select:focus,
 .form-container .form-shape form #connexion select:focus,
-.form-container .form-shape form #registration_form select:focus {
+.form-container .form-shape form #registration_form select:focus,
+.form-container .form-shape form #commande select:focus {
   border-bottom-color: #319D34;
 }
 .form-container .form-shape form #producteur input,
 .form-container .form-shape form #connexion input,
 .form-container .form-shape form #registration_form input,
+.form-container .form-shape form #commande input,
 .form-container .form-shape form #producteur textarea,
 .form-container .form-shape form #connexion textarea,
-.form-container .form-shape form #registration_form textarea {
+.form-container .form-shape form #registration_form textarea,
+.form-container .form-shape form #commande textarea {
   border: 1px solid #C2C2C2;
   border-bottom: 2px solid #C2C2C2;
   border-radius: 3px;
@@ -2251,14 +2266,17 @@ a {
 .form-container .form-shape form #producteur input:focus,
 .form-container .form-shape form #connexion input:focus,
 .form-container .form-shape form #registration_form input:focus,
+.form-container .form-shape form #commande input:focus,
 .form-container .form-shape form #producteur textarea:focus,
 .form-container .form-shape form #connexion textarea:focus,
-.form-container .form-shape form #registration_form textarea:focus {
+.form-container .form-shape form #registration_form textarea:focus,
+.form-container .form-shape form #commande textarea:focus {
   border-bottom-color: #319D34;
 }
 .form-container .form-shape form #producteur textarea,
 .form-container .form-shape form #connexion textarea,
-.form-container .form-shape form #registration_form textarea {
+.form-container .form-shape form #registration_form textarea,
+.form-container .form-shape form #commande textarea {
   resize: none;
   font-family: 'REGULAR';
   font-size: 14px;
@@ -2303,4 +2321,11 @@ a {
 #mapid {
   width: 100%;
   height: 400px;
+}
+.select2,
+.select2 * {
+  font-family: 'REGULAR';
+}
+.select2-results * {
+  font-family: 'REGULAR';
 }

@@ -22,7 +22,7 @@
                     <td>
                         {% if commande.etat == 'Preparation' %}
                         <div class="prep">{{ commande.etat }}</div>
-                        {% elseif commande.etat == "Attente d'expedition" %}
+                        {% elseif commande.etat == "En attente de preparation" %}
                         <div class="waiting">{{ commande.etat }}</div>
                         {% else %}
                         <div class="done">{{ commande.etat }}</div>
@@ -37,16 +37,20 @@
                 </tr>
             {% else %}
                 <tr>
-                    <td colspan="5">no records found</td>
+                    <td colspan="5">Aucune commande</td>
                 </tr>
             {% endfor %}
 
             </tbody>
         </table>
     </div>
-    <div class="padding-l-L">
-        <a href="{{ path('commande_new') }}"><div class="cafe-button">Nouvelle commande</div></a>
-    </div>
+    
+    {% if app.user.type == 'importateur' %}
+        <div class="padding-l-L">
+            <a href="{{ path('commande_new') }}"><div class="cafe-button">Nouvelle commande</div></a>
+        </div>
+    {% endif %}
+
     {% for commande in commandes %}
         <div class="modal-custom hidden" id="command-{{ commande.id }}">
             <div class="content">

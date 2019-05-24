@@ -100,7 +100,7 @@ a {
 			font-family:'BOLD';
 			cursor:pointer;
 		}
-		.login {
+		.login, .about {
 			padding:10px;
 			&:hover { background-color: @green_back_dark; }
 			border-radius:3px;
@@ -108,6 +108,7 @@ a {
 			font-family:'REGULAR';
 			cursor:pointer;
 			margin-right:10px;
+			margin-left:10px;
 		}
 	}
 }
@@ -362,7 +363,7 @@ a {
 				width:100%;
 				font-family:'BOLD';
 			}
-			#producteur, #connexion, #registration_form {
+			#producteur, #connexion, #registration_form, #commande {
 				padding:10px;
 				& > div {
 					.column();
@@ -438,4 +439,10 @@ a {
 #mapid {
 	width:100%;
 	height:400px;
+}
+.select2, .select2 * {
+	font-family:'REGULAR';
+}
+.select2-results * {
+	font-family:'REGULAR';
 }

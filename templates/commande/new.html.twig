@@ -16,9 +16,15 @@
 {% endblock %}
 
 {% block body %}
-    <h1>Create new Commande</h1>
+    
+    <a href="{{ path('commande_index') }}"><div class="button-back"></div></a>
 
-    {{ include('commande/_form.html.twig') }}
+    <div class="form-container w100p row-c-c">
+        <div class="form-shape">
+            <div class="head">Nouvelle commande</div>
+            {{ include('commande/_form.html.twig') }}
+        </div>
+    </div>
 
-    <a href="{{ path('commande_index') }}">back to list</a>
+    
 {% endblock %}

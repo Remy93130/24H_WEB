@@ -23,24 +23,30 @@
 		    			<p>Kawa</p>
 		    		</div>
 	    		</a>
-				<a href="{{ path("producteur_index") }}">
-		    		<div class="item">
-		    			<img src="{{ asset("pics/loupe.svg")}}" alt="">
-		    			<p>Visualiser</p>
-		    		</div>
-	    		</a>
+	    		{% if app.user and app.user.type == 'importateur' %}
 				<a href="">
 		    		<div class="item">
 		    			<img src="{{ asset("pics/relations.svg")}}" alt="">
-		    			<p>Relations</p>
+		    			<p>Exportateurs</p>
 		    		</div>
 	    		</a>
+	    		{% endif %}
+	    		{% if app.user %}
 				<a href="{{ path("commande_index") }}">
 		    		<div class="item">
 		    			<img src="{{ asset("pics/box.svg")}}" alt="">
 		    			<p>Commandes</p>
 		    		</div>
 	    		</a>
+	    		{% endif %}
+	    		{% if app.user and app.user.type == 'exportateur' %}
+	    			<a href="{{ path("cafe_index") }}">
+			    		<div class="item">
+			    			<img src="{{ asset("pics/box.svg")}}" alt="">
+			    			<p>Mes cafés</p>
+			    		</div>
+		    		</a>
+	    		{% endif %}
     		</div>
     		<div class="end">
 	    	{% if app.user %}
@@ -49,6 +55,7 @@
 				<a href='{{  path('app_login') }}'><div class="login">Se connecter</div></a>
 				<a href='{{  path('app_register') }}'><div class="signin">S'inscrire</div></a>
 	    	{% endif %}
+	    		<a href='{{  path('app_register') }}'><div class="about">A propos</div></a>
 	    	</div>
     	</div>
     	<div id="body">

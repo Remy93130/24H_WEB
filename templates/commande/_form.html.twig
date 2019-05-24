@@ -1,4 +1,11 @@
 {{ form_start(form) }}
+	{% if erreur %}
+        <div class="alert">
+            {{ erreur }}
+        </div>
+    {% endif %}
     {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+    <div class="button-container">
+    	<button class="cafe-button">{{ button_label|default('Valider la commande') }}</button>
+    </div>
 {{ form_end(form) }}
