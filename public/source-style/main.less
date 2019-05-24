@@ -113,7 +113,7 @@ a {
 }
 #background {
 	position:fixed;
-	bottom:0;
+	top:0;
 	left:0;
 	width:100vw;
 	z-index:-1;
@@ -133,7 +133,7 @@ a {
 	background-color:@green_back_dark;
 }
 
-#visualize-table {
+#visualize-table, #commands-table {
 	border-collapse:collapse;
 	box-shadow:0 1px 3px 1px rgba(0, 0, 0, 0.3);
 	thead {
@@ -251,6 +251,11 @@ a {
 						.split();
 					}
 				}
+			}
+
+			.informations-commande {
+				padding:10px;
+				p:not(.title) { font-family:'REGULAR'; }
 			}
 			.numbers {
 				.row();

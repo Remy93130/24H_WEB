@@ -14,3 +14,16 @@ function showVisualizeInformationModal(id) {
 function closeModal(id) {
 	getId(id).classList.add('hidden');
 }
+
+function showCommandModal(id) {
+	if (current_modal !== null) current_modal.classList.add('hidden');
+
+	let modal = getId('command-'+id);
+	current_modal = modal;
+
+	modal.classList.remove('hidden');
+}
+
+function closeCurrent() {
+	if (current_modal !== null) current_modal.classList.add('hidden');
+}

@@ -1873,7 +1873,7 @@ a {
 }
 #background {
   position: fixed;
-  bottom: 0;
+  top: 0;
   left: 0;
   width: 100vw;
   z-index: -1;
@@ -1892,81 +1892,102 @@ a {
   height: 100px;
   background-color: #277229;
 }
-#visualize-table {
+#visualize-table,
+#commands-table {
   border-collapse: collapse;
   box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.3);
 }
-#visualize-table thead {
+#visualize-table thead,
+#commands-table thead {
   border-radius: 2px 2px 0 0;
 }
-#visualize-table thead th {
+#visualize-table thead th,
+#commands-table thead th {
   font-weight: 400;
   padding: 3px 5px;
   background-color: #277229;
   font-family: 'BOLD';
   color: #FFFFFF;
 }
-#visualize-table thead th:first-child {
+#visualize-table thead th:first-child,
+#commands-table thead th:first-child {
   border-radius: 2px 0 0 0;
 }
-#visualize-table thead th:last-child {
+#visualize-table thead th:last-child,
+#commands-table thead th:last-child {
   border-radius: 0 2px 0 0;
 }
-#visualize-table tbody {
+#visualize-table tbody,
+#commands-table tbody {
   border-radius: 2px;
 }
-#visualize-table tbody td {
+#visualize-table tbody td,
+#commands-table tbody td {
   font-family: 'REGULAR';
   padding: 1px 2px 1px 4px;
 }
-#visualize-table tbody tr {
+#visualize-table tbody tr,
+#commands-table tbody tr {
   cursor: pointer;
 }
-#visualize-table tbody tr:hover {
+#visualize-table tbody tr:hover,
+#commands-table tbody tr:hover {
   background-color: #A57334 !important;
   color: #FFFFFF;
 }
-#visualize-table tbody tr:nth-child(odd) {
+#visualize-table tbody tr:nth-child(odd),
+#commands-table tbody tr:nth-child(odd) {
   background-color: #E7E7E7;
 }
-#visualize-table tbody tr:last-child {
+#visualize-table tbody tr:last-child,
+#commands-table tbody tr:last-child {
   border-radius: 0 0 2px 2px;
 }
-#visualize-table tbody tr:last-child > td:first-child {
+#visualize-table tbody tr:last-child > td:first-child,
+#commands-table tbody tr:last-child > td:first-child {
   border-radius: 0 0 0 2px;
 }
-#visualize-table tbody tr:last-child > td:last-child {
+#visualize-table tbody tr:last-child > td:last-child,
+#commands-table tbody tr:last-child > td:last-child {
   border-radius: 0 0 2px 0;
 }
-#visualize-table tbody tr .flag {
+#visualize-table tbody tr .flag,
+#commands-table tbody tr .flag {
   text-align: center;
   padding-top: 4px;
 }
-#visualize-table tbody tr .flag img {
+#visualize-table tbody tr .flag img,
+#commands-table tbody tr .flag img {
   height: 20px;
 }
 #visualize-table tbody tr .percent,
-#visualize-table tbody tr .heavy {
+#commands-table tbody tr .percent,
+#visualize-table tbody tr .heavy,
+#commands-table tbody tr .heavy {
   text-align: center;
 }
-#visualize-table tbody tr .edit {
+#visualize-table tbody tr .edit,
+#commands-table tbody tr .edit {
   padding-top: 4px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
-#visualize-table tbody tr .edit .link {
+#visualize-table tbody tr .edit .link,
+#commands-table tbody tr .edit .link {
   width: 25px;
   background-color: #319D34;
   border-radius: 1px;
   text-align: center;
   padding-top: 2px;
 }
-#visualize-table tbody tr .edit .link:hover {
+#visualize-table tbody tr .edit .link:hover,
+#commands-table tbody tr .edit .link:hover {
   background: #277229;
 }
-#visualize-table tbody tr .edit .link img {
+#visualize-table tbody tr .edit .link img,
+#commands-table tbody tr .edit .link img {
   height: 15px;
 }
 .cafe-button {
@@ -2039,6 +2060,12 @@ a {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+.modal-custom .content .body .informations-commande {
+  padding: 10px;
+}
+.modal-custom .content .body .informations-commande p:not(.title) {
+  font-family: 'REGULAR';
 }
 .modal-custom .content .body .numbers {
   display: flex;
