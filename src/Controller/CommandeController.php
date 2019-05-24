@@ -59,7 +59,7 @@ class CommandeController extends AbstractController
                     'erreur' => "Vous ne pouvez pas prendre plus de cafe que le stock prévu !"
                 ]);
             }
-
+            $commande->setDate(new \Datetime);
             $commande->getCafe()->setStock($commande->getCafe()->getStock() - $commande->getQuantite());
 
             $commande->setVendeur($commande->getCafe()->getProprietaire());
