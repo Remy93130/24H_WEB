@@ -19,7 +19,15 @@
             {% for commande in commandes %}
                 <tr onclick='showCommandModal({{ commande.id }})'>  
                     <td>{{ commande.date ? commande.date|date('Y-m-d H:i:s') : '' }}</td>
-                    <td>{{ commande.etat }}</td>
+                    <td>
+                        {% if commande.etat == 'Preparation' %}
+                        <div class="prep">{{ commande.etat }}</div>
+                        {% elseif commande.etat == "Attente d'expedition" %}
+                        <div class="waiting">{{ commande.etat }}</div>
+                        {% else %}
+                        <div class="done">{{ commande.etat }}</div>
+                        {% endif %}
+                    </td>
                     <td>{{ commande.quantite }}</td>
                     {% if app.user.type == 'exportateur' %}
                     <td>
