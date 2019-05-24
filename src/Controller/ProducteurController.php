@@ -17,6 +17,8 @@ class ProducteurController extends AbstractController
 {
     /**
      * @Route("/", name="producteur_index", methods={"GET"})
+     * @param ProducteurRepository $producteurRepository
+     * @return Response
      */
     public function index(ProducteurRepository $producteurRepository): Response
     {
@@ -27,6 +29,8 @@ class ProducteurController extends AbstractController
 
     /**
      * @Route("/new", name="producteur_new", methods={"GET","POST"})
+     * @param Request $request
+     * @return Response
      */
     public function new(Request $request): Response
     {
@@ -92,5 +96,23 @@ class ProducteurController extends AbstractController
         }
 
         return $this->redirectToRoute('producteur_index');
+    }
+
+    /**
+     * @Route("/carte/show", name="producteur_carte")
+     */
+    public function getForMap(): Response
+    {
+        return $this->render("producteur/carte.html.twig");
+    }
+
+    /**
+     * @Route("/api/producteurs", name="producteur_get", methods={"GET"})
+     * @param ProducteurRepository $repository
+     * @return Response
+     */
+    public function getCoord(ProducteurRepository $repository): Response
+    {
+        return $this->json($repository->findAll());
     }
 }
