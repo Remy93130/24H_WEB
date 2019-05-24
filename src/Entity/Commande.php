@@ -41,6 +41,11 @@ class Commande
      */
     private $date;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $suivi;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -102,6 +107,18 @@ class Commande
     public function setDate(\DateTimeInterface $date): self
     {
         $this->date = $date;
+
+        return $this;
+    }
+
+    public function getSuivi(): ?string
+    {
+        return $this->suivi;
+    }
+
+    public function setSuivi(string $suivi): self
+    {
+        $this->suivi = $suivi;
 
         return $this;
     }
