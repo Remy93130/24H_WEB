@@ -63,6 +63,8 @@ class CafeController extends AbstractController
 
     /**
      * @Route("/{id}", name="cafe_show", methods={"GET"})
+     * @param Cafe $cafe
+     * @return Response
      */
     public function show(Cafe $cafe): Response
     {
@@ -73,6 +75,9 @@ class CafeController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="cafe_edit", methods={"GET","POST"})
+     * @param Request $request
+     * @param Cafe $cafe
+     * @return Response
      */
     public function edit(Request $request, Cafe $cafe): Response
     {
