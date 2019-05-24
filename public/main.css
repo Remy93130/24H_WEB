@@ -1871,10 +1871,22 @@ a {
 #navbar .end .login:hover {
   background-color: #277229;
 }
+#background {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  z-index: -1;
+}
 #body {
+  width: calc(100% - 200px);
+  margin-left: 100px;
+  z-index: 1;
+  background-color: white;
   margin-top: 60px;
-  min-height: calc(100% - 60px) !important;
+  min-height: 100vh !important;
   padding-top: 20px;
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.5);
 }
 #footer {
   height: 100px;
@@ -1982,7 +1994,7 @@ a {
   align-items: start;
   position: fixed;
   top: 80px;
-  right: 20px;
+  right: 120px;
 }
 .modal-custom.hidden {
   display: none;
