@@ -22,7 +22,7 @@ class CommandeType extends AbstractType
                 "attr" => ['hidden' => true]
             ])
             ->add('etat', HiddenType::class, [
-                "attr" => ["value" => "Preparation"]
+                "attr" => ["value" => "En attente de preparation"]
             ])
             // ->add('acheteur')
             // ->add('vendeur')
