@@ -22,6 +22,11 @@ class CafeController extends AbstractController
      */
     public function index(CafeRepository $cafeRepository): Response
     {
+        if ($this->getUser() == null|| $this->getUser()->getType() == "importateur") {
+            return $this->render('cafe/index.html.twig', [
+                "cafes" => $cafeRepository->findAll(),
+            ]);
+        }
         return $this->render('cafe/index.html.twig', [
             'cafes' => $cafeRepository->findCoffeeByOwner($this->getUser()),
         ]);
@@ -72,7 +77,7 @@ class CafeController extends AbstractController
     public function edit(Request $request, Cafe $cafe): Response
     {
         if ($this->getUser()->getType() != "exportateur") {
-            return $this->redirectToRoute("app_logout");
+            return $this->redirectToRoute("index");
         }
         $form = $this->createForm(CafeType::class, $cafe);
         $form->handleRequest($request);

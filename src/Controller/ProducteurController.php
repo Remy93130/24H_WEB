@@ -54,6 +54,8 @@ class ProducteurController extends AbstractController
 
     /**
      * @Route("/{id}", name="producteur_show", methods={"GET"})
+     * @param Producteur $producteur
+     * @return Response
      */
     public function show(Producteur $producteur): Response
     {
@@ -64,6 +66,9 @@ class ProducteurController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="producteur_edit", methods={"GET","POST"})
+     * @param Request $request
+     * @param Producteur $producteur
+     * @return Response
      */
     public function edit(Request $request, Producteur $producteur): Response
     {
@@ -86,6 +91,9 @@ class ProducteurController extends AbstractController
 
     /**
      * @Route("/{id}", name="producteur_delete", methods={"DELETE"})
+     * @param Request $request
+     * @param Producteur $producteur
+     * @return Response
      */
     public function delete(Request $request, Producteur $producteur): Response
     {
