@@ -23,14 +23,6 @@
 		    			<p>Kawa</p>
 		    		</div>
 	    		</a>
-	    		{% if app.user and app.user.type == 'importateur' %}
-				<a href="">
-		    		<div class="item">
-		    			<img src="{{ asset("pics/relations.svg")}}" alt="">
-		    			<p>Exportateurs</p>
-		    		</div>
-	    		</a>
-	    		{% endif %}
 	    		{% if app.user %}
 				<a href="{{ path("commande_index") }}">
 		    		<div class="item">
