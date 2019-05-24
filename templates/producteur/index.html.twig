@@ -10,9 +10,6 @@
                 <tr>
                     <th>Nom</th>
                     <th>Drapeau</th>
-                    <!-- <th>Capitale</th>
-                    <th>Habitant</th>
-                    <th>Surface</th> -->
                     <th>Tonne</th>
                     <th>Pourcent</th>
                     <th>actions</th>
@@ -22,11 +19,7 @@
             {% for producteur in producteurs %}
                 <tr onclick='showVisualizeInformationModal({{ producteur.id }})'>
                     <td class='producer'>{{ producteur.nom }}</td>
-                    <!-- <td>{{ producteur.description }}</td> -->
                     <td class='flag'><img src="{{ producteur.drapeau }}"></td>
-                    <!-- <td class='capital'>{{ producteur.capitale }}</td> -->
-                    <!-- <td class='livings'>{{ producteur.habitant }}</td> -->
-                    <!-- <td class='surface'>{{ producteur.surface }}km²</td> -->
                     <td class='heavy'>{{ producteur.tonne }}</td>
                     <td class='percent'>{{ producteur.pourcent }}%</td>
                     <td class='edit' onclick='showVisualizationEditModal( {{ path('producteur_edit', {'id': producteur.id}) }} )'>
