@@ -12,9 +12,7 @@ class BaseController extends AbstractController
      */
     public function index()
     {
-        return $this->render('base/index.html.twig', [
-            'controller_name' => 'BaseController',
-        ]);
+        return $this->redirectToRoute('producteur_index');
     }
 
     /**
