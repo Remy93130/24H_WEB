@@ -15,6 +15,7 @@ class AppFixtures extends Fixture
 	$faker = Factory::create("fr_FR");
         for ($i = 0; $i < 20; $i++) {
 		$producteur = new Producteur();
+		$number = $faker->numberBetween(0, 100);
 		$producteur
 			->setNom($faker->country)
             ->setDescription($faker->realText())
@@ -24,6 +25,10 @@ class AppFixtures extends Fixture
             ->setHabitant($faker->numberBetween(1000, 100000))
             ->setPourcent($faker->numberBetween(0, 100))
             ->setTonne($faker->numberBetween(5, 100))
+            ->setArabica($number)
+            ->setRobusta(100 - $number)
+            ->setLat($faker->numberBetween(-90, 90))
+            ->setLon($faker->numberBetween(-180, 180))
 		;
 		$manager->persist($producteur);
 	}

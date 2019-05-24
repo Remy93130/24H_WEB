@@ -56,6 +56,26 @@ class Producteur
      */
     private $pourcent;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $arabica;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $robusta;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $lon;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $lat;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -153,6 +173,54 @@ class Producteur
     public function setPourcent(string $pourcent): self
     {
         $this->pourcent = $pourcent;
+
+        return $this;
+    }
+
+    public function getArabica(): ?string
+    {
+        return $this->arabica;
+    }
+
+    public function setArabica(string $arabica): self
+    {
+        $this->arabica = $arabica;
+
+        return $this;
+    }
+
+    public function getRobusta(): ?string
+    {
+        return $this->robusta;
+    }
+
+    public function setRobusta(string $robusta): self
+    {
+        $this->robusta = $robusta;
+
+        return $this;
+    }
+
+    public function getLon(): ?string
+    {
+        return $this->lon;
+    }
+
+    public function setLon(string $lon): self
+    {
+        $this->lon = $lon;
+
+        return $this;
+    }
+
+    public function getLat(): ?string
+    {
+        return $this->lat;
+    }
+
+    public function setLat(string $lat): self
+    {
+        $this->lat = $lat;
 
         return $this;
     }
