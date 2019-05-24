@@ -3,11 +3,15 @@
 {% block title %}Edit Cafe{% endblock %}
 
 {% block body %}
-    <h1>Edit Cafe</h1>
+	
+	<a href="{{ path('cafe_index') }}"><div class="button-back"></div></a>
+	<div class="form-container w100p row-c-c">
+		<div class="form-shape">
+			<div class="head">Modifier le café</div>
+			{{ include('cafe/_form.html.twig', {'button_label': 'Modifier'}) }}
 
-    {{ include('cafe/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('cafe_index') }}">back to list</a>
-
-    {{ include('cafe/_delete_form.html.twig') }}
+		    {{ include('cafe/_delete_form.html.twig') }}
+		</div>
+	</div>
+    
 {% endblock %}

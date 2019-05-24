@@ -3,9 +3,14 @@
 {% block title %}New Cafe{% endblock %}
 
 {% block body %}
-    <h1>Create new Cafe</h1>
+	
+	<a href="{{ path('cafe_index') }}"><div class="button-back"></div></a>
+	<div class="form-container w100p row-c-c">
+		<div class="form-shape">
+			<div class="head">Ajouter un café</div>
+			{{ include('cafe/_form.html.twig') }}
+		</div>
+	</div>
 
-    {{ include('cafe/_form.html.twig') }}
-
-    <a href="{{ path('cafe_index') }}">back to list</a>
+    
 {% endblock %}

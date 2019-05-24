@@ -1896,16 +1896,19 @@ a {
   background-color: #277229;
 }
 #visualize-table,
-#commands-table {
+#commands-table,
+#cafe-table {
   border-collapse: collapse;
   box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.3);
 }
 #visualize-table thead,
-#commands-table thead {
+#commands-table thead,
+#cafe-table thead {
   border-radius: 2px 2px 0 0;
 }
 #visualize-table thead th,
-#commands-table thead th {
+#commands-table thead th,
+#cafe-table thead th {
   font-weight: 400;
   padding: 3px 5px;
   background-color: #277229;
@@ -1913,82 +1916,100 @@ a {
   color: #FFFFFF;
 }
 #visualize-table thead th:first-child,
-#commands-table thead th:first-child {
+#commands-table thead th:first-child,
+#cafe-table thead th:first-child {
   border-radius: 2px 0 0 0;
 }
 #visualize-table thead th:last-child,
-#commands-table thead th:last-child {
+#commands-table thead th:last-child,
+#cafe-table thead th:last-child {
   border-radius: 0 2px 0 0;
 }
 #visualize-table tbody,
-#commands-table tbody {
+#commands-table tbody,
+#cafe-table tbody {
   border-radius: 2px;
 }
 #visualize-table tbody td,
-#commands-table tbody td {
+#commands-table tbody td,
+#cafe-table tbody td {
   font-family: 'REGULAR';
   padding: 1px 2px 1px 4px;
 }
 #visualize-table tbody td .prep,
-#commands-table tbody td .prep {
+#commands-table tbody td .prep,
+#cafe-table tbody td .prep {
   background: #FFA768;
   color: white;
   padding: 3px 2px;
 }
 #visualize-table tbody td .waiting,
-#commands-table tbody td .waiting {
+#commands-table tbody td .waiting,
+#cafe-table tbody td .waiting {
   background: #FF4956;
   color: white;
   padding: 3px 2px;
 }
 #visualize-table tbody td .done,
-#commands-table tbody td .done {
+#commands-table tbody td .done,
+#cafe-table tbody td .done {
   background: #58DD6A;
   color: white;
   padding: 3px 2px;
 }
 #visualize-table tbody tr,
-#commands-table tbody tr {
+#commands-table tbody tr,
+#cafe-table tbody tr {
   cursor: pointer;
 }
 #visualize-table tbody tr:hover,
-#commands-table tbody tr:hover {
+#commands-table tbody tr:hover,
+#cafe-table tbody tr:hover {
   background-color: #A57334 !important;
   color: #FFFFFF;
 }
 #visualize-table tbody tr:nth-child(odd),
-#commands-table tbody tr:nth-child(odd) {
+#commands-table tbody tr:nth-child(odd),
+#cafe-table tbody tr:nth-child(odd) {
   background-color: #E7E7E7;
 }
 #visualize-table tbody tr:last-child,
-#commands-table tbody tr:last-child {
+#commands-table tbody tr:last-child,
+#cafe-table tbody tr:last-child {
   border-radius: 0 0 2px 2px;
 }
 #visualize-table tbody tr:last-child > td:first-child,
-#commands-table tbody tr:last-child > td:first-child {
+#commands-table tbody tr:last-child > td:first-child,
+#cafe-table tbody tr:last-child > td:first-child {
   border-radius: 0 0 0 2px;
 }
 #visualize-table tbody tr:last-child > td:last-child,
-#commands-table tbody tr:last-child > td:last-child {
+#commands-table tbody tr:last-child > td:last-child,
+#cafe-table tbody tr:last-child > td:last-child {
   border-radius: 0 0 2px 0;
 }
 #visualize-table tbody tr .flag,
-#commands-table tbody tr .flag {
+#commands-table tbody tr .flag,
+#cafe-table tbody tr .flag {
   text-align: center;
   padding-top: 4px;
 }
 #visualize-table tbody tr .flag img,
-#commands-table tbody tr .flag img {
+#commands-table tbody tr .flag img,
+#cafe-table tbody tr .flag img {
   height: 20px;
 }
 #visualize-table tbody tr .percent,
 #commands-table tbody tr .percent,
+#cafe-table tbody tr .percent,
 #visualize-table tbody tr .heavy,
-#commands-table tbody tr .heavy {
+#commands-table tbody tr .heavy,
+#cafe-table tbody tr .heavy {
   text-align: center;
 }
 #visualize-table tbody tr .edit,
-#commands-table tbody tr .edit {
+#commands-table tbody tr .edit,
+#cafe-table tbody tr .edit {
   padding-top: 4px;
   display: flex;
   flex-wrap: wrap;
@@ -1996,7 +2017,8 @@ a {
   align-items: center;
 }
 #visualize-table tbody tr .edit .link,
-#commands-table tbody tr .edit .link {
+#commands-table tbody tr .edit .link,
+#cafe-table tbody tr .edit .link {
   width: 25px;
   background-color: #319D34;
   border-radius: 1px;
@@ -2004,11 +2026,13 @@ a {
   padding-top: 2px;
 }
 #visualize-table tbody tr .edit .link:hover,
-#commands-table tbody tr .edit .link:hover {
+#commands-table tbody tr .edit .link:hover,
+#cafe-table tbody tr .edit .link:hover {
   background: #277229;
 }
 #visualize-table tbody tr .edit .link img,
-#commands-table tbody tr .edit .link img {
+#commands-table tbody tr .edit .link img,
+#cafe-table tbody tr .edit .link img {
   height: 15px;
 }
 .cafe-button {
@@ -2189,13 +2213,17 @@ a {
 .form-container .form-shape form #producteur,
 .form-container .form-shape form #connexion,
 .form-container .form-shape form #registration_form,
-.form-container .form-shape form #commande {
+.form-container .form-shape form #commande,
+.form-container .form-shape form #cafe,
+.form-container .form-shape form #commande_update {
   padding: 10px;
 }
 .form-container .form-shape form #producteur > div,
 .form-container .form-shape form #connexion > div,
 .form-container .form-shape form #registration_form > div,
-.form-container .form-shape form #commande > div {
+.form-container .form-shape form #commande > div,
+.form-container .form-shape form #cafe > div,
+.form-container .form-shape form #commande_update > div {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -2203,42 +2231,56 @@ a {
 .form-container .form-shape form #producteur > div label,
 .form-container .form-shape form #connexion > div label,
 .form-container .form-shape form #registration_form > div label,
-.form-container .form-shape form #commande > div label {
+.form-container .form-shape form #commande > div label,
+.form-container .form-shape form #cafe > div label,
+.form-container .form-shape form #commande_update > div label {
   width: 100%;
 }
 .form-container .form-shape form #producteur > div input,
 .form-container .form-shape form #connexion > div input,
 .form-container .form-shape form #registration_form > div input,
 .form-container .form-shape form #commande > div input,
+.form-container .form-shape form #cafe > div input,
+.form-container .form-shape form #commande_update > div input,
 .form-container .form-shape form #producteur > div textarea,
 .form-container .form-shape form #connexion > div textarea,
 .form-container .form-shape form #registration_form > div textarea,
-.form-container .form-shape form #commande > div textarea {
+.form-container .form-shape form #commande > div textarea,
+.form-container .form-shape form #cafe > div textarea,
+.form-container .form-shape form #commande_update > div textarea {
   width: 100%;
 }
 .form-container .form-shape form #producteur > div:nth-child(n + 2),
 .form-container .form-shape form #connexion > div:nth-child(n + 2),
 .form-container .form-shape form #registration_form > div:nth-child(n + 2),
-.form-container .form-shape form #commande > div:nth-child(n + 2) {
+.form-container .form-shape form #commande > div:nth-child(n + 2),
+.form-container .form-shape form #cafe > div:nth-child(n + 2),
+.form-container .form-shape form #commande_update > div:nth-child(n + 2) {
   margin-top: 10px;
 }
 .form-container .form-shape form #producteur label,
 .form-container .form-shape form #connexion label,
 .form-container .form-shape form #registration_form label,
-.form-container .form-shape form #commande label {
+.form-container .form-shape form #commande label,
+.form-container .form-shape form #cafe label,
+.form-container .form-shape form #commande_update label {
   width: 100%;
   margin-bottom: 5px;
 }
 .form-container .form-shape form #producteur input,
 .form-container .form-shape form #connexion input,
 .form-container .form-shape form #registration_form input,
-.form-container .form-shape form #commande input {
+.form-container .form-shape form #commande input,
+.form-container .form-shape form #cafe input,
+.form-container .form-shape form #commande_update input {
   height: 30px;
 }
 .form-container .form-shape form #producteur select,
 .form-container .form-shape form #connexion select,
 .form-container .form-shape form #registration_form select,
-.form-container .form-shape form #commande select {
+.form-container .form-shape form #commande select,
+.form-container .form-shape form #cafe select,
+.form-container .form-shape form #commande_update select {
   border: 1px solid #C2C2C2;
   border-bottom: 2px solid #C2C2C2;
   border-radius: 3px;
@@ -2247,17 +2289,23 @@ a {
 .form-container .form-shape form #producteur select:focus,
 .form-container .form-shape form #connexion select:focus,
 .form-container .form-shape form #registration_form select:focus,
-.form-container .form-shape form #commande select:focus {
+.form-container .form-shape form #commande select:focus,
+.form-container .form-shape form #cafe select:focus,
+.form-container .form-shape form #commande_update select:focus {
   border-bottom-color: #319D34;
 }
 .form-container .form-shape form #producteur input,
 .form-container .form-shape form #connexion input,
 .form-container .form-shape form #registration_form input,
 .form-container .form-shape form #commande input,
+.form-container .form-shape form #cafe input,
+.form-container .form-shape form #commande_update input,
 .form-container .form-shape form #producteur textarea,
 .form-container .form-shape form #connexion textarea,
 .form-container .form-shape form #registration_form textarea,
-.form-container .form-shape form #commande textarea {
+.form-container .form-shape form #commande textarea,
+.form-container .form-shape form #cafe textarea,
+.form-container .form-shape form #commande_update textarea {
   border: 1px solid #C2C2C2;
   border-bottom: 2px solid #C2C2C2;
   border-radius: 3px;
@@ -2267,16 +2315,22 @@ a {
 .form-container .form-shape form #connexion input:focus,
 .form-container .form-shape form #registration_form input:focus,
 .form-container .form-shape form #commande input:focus,
+.form-container .form-shape form #cafe input:focus,
+.form-container .form-shape form #commande_update input:focus,
 .form-container .form-shape form #producteur textarea:focus,
 .form-container .form-shape form #connexion textarea:focus,
 .form-container .form-shape form #registration_form textarea:focus,
-.form-container .form-shape form #commande textarea:focus {
+.form-container .form-shape form #commande textarea:focus,
+.form-container .form-shape form #cafe textarea:focus,
+.form-container .form-shape form #commande_update textarea:focus {
   border-bottom-color: #319D34;
 }
 .form-container .form-shape form #producteur textarea,
 .form-container .form-shape form #connexion textarea,
 .form-container .form-shape form #registration_form textarea,
-.form-container .form-shape form #commande textarea {
+.form-container .form-shape form #commande textarea,
+.form-container .form-shape form #cafe textarea,
+.form-container .form-shape form #commande_update textarea {
   resize: none;
   font-family: 'REGULAR';
   font-size: 14px;

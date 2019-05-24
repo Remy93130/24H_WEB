@@ -3,37 +3,34 @@
 {% block title %}Cafe index{% endblock %}
 
 {% block body %}
-    <h1>Cafe index</h1>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nom</th>
-                <th>Type</th>
-                <th>Stock</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for cafe in cafes %}
-            <tr>
-                <td>{{ cafe.id }}</td>
-                <td>{{ cafe.nom }}</td>
-                <td>{{ cafe.type }}</td>
-                <td>{{ cafe.stock }}</td>
-                <td>
-                    <a href="{{ path('cafe_show', {'id': cafe.id}) }}">show</a>
-                    <a href="{{ path('cafe_edit', {'id': cafe.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="5">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('cafe_new') }}">Create new</a>
+    <div class="padding-l-L space-v-L">
+        <table class="table" id="cafe-table">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Type</th>
+                    <th>Stock</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for cafe in cafes %}
+                <tr>
+                    <td>{{ cafe.nom }}</td>
+                    <td>{{ cafe.type|capitalize }}</td>
+                    <td>{{ cafe.stock }}</td>
+                    <td>
+                        <a href="{{ path('cafe_edit', {'id': cafe.id}) }}"><div class="cafe-button">Editer</div></a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="5">Aucun café enregistrer</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        
+        <a href="{{ path('cafe_new') }}"><div class="cafe-button">Nouveau café</div></a>
+    </div>
 {% endblock %}
