@@ -5,10 +5,12 @@
 {% block body %}
 	
 	<div class="form-container w100p row-c-c">
-	    {{ form_start(registrationForm) }}
-	    	<div class="head">Inscription</div>
-	        {{ form_widget(registrationForm) }}
-	        <div class="button-container"><button class="cafe-button">S'inscrire</button></div>
-	    {{ form_end(registrationForm) }}
+		<div class="form-shape">
+			<div class="head">S'inscrire</div>
+		    {{ form_start(registrationForm) }}
+		        {{ form_widget(registrationForm) }}
+		        <div class="button-container"><button class="cafe-button">S'inscrire</button></div>
+		    {{ form_end(registrationForm) }}
+	    </div>
     </div>
 {% endblock %}
