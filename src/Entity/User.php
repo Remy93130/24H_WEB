@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -54,6 +56,16 @@ class User implements UserInterface
      * @ORM\Column(type="text")
      */
     private $type;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Cafe", mappedBy="proprietaire")
+     */
+    private $cafes;
+
+    public function __construct()
+    {
+        $this->cafes = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -177,6 +189,37 @@ class User implements UserInterface
     public function setType(string $type): self
     {
         $this->type = $type;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Cafe[]
+     */
+    public function getCafes(): Collection
+    {
+        return $this->cafes;
+    }
+
+    public function addCafe(Cafe $cafe): self
+    {
+        if (!$this->cafes->contains($cafe)) {
+            $this->cafes[] = $cafe;
+            $cafe->setProprietaire($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCafe(Cafe $cafe): self
+    {
+        if ($this->cafes->contains($cafe)) {
+            $this->cafes->removeElement($cafe);
+            // set the owning side to null (unless already changed)
+            if ($cafe->getProprietaire() === $this) {
+                $cafe->setProprietaire(null);
+            }
+        }
 
         return $this;
     }

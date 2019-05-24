@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -75,6 +77,16 @@ class Producteur
      * @ORM\Column(type="string", length=255)
      */
     private $lat;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Cafe", mappedBy="provenance")
+     */
+    private $cafes;
+
+    public function __construct()
+    {
+        $this->cafes = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -221,6 +233,37 @@ class Producteur
     public function setLat(string $lat): self
     {
         $this->lat = $lat;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Cafe[]
+     */
+    public function getCafes(): Collection
+    {
+        return $this->cafes;
+    }
+
+    public function addCafe(Cafe $cafe): self
+    {
+        if (!$this->cafes->contains($cafe)) {
+            $this->cafes[] = $cafe;
+            $cafe->setProvenance($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCafe(Cafe $cafe): self
+    {
+        if ($this->cafes->contains($cafe)) {
+            $this->cafes->removeElement($cafe);
+            // set the owning side to null (unless already changed)
+            if ($cafe->getProvenance() === $this) {
+                $cafe->setProvenance(null);
+            }
+        }
 
         return $this;
     }
