@@ -51,6 +51,11 @@ class CommandeController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            if ($commande->getCafe()->getStock() - $commande->getQuantite() < 0) {
+                return $this->redirectToRoute("commande_new");
+            }
+
             $commande->setVendeur($commande->getCafe()->getProprietaire());
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($commande);
