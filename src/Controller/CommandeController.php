@@ -53,7 +53,11 @@ class CommandeController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
 
             if ($commande->getCafe()->getStock() - $commande->getQuantite() < 0) {
-                return $this->redirectToRoute("commande_new");
+                return $this->render('commande/new.html.twig', [
+                    'commande' => $commande,
+                    'form' => $form->createView(),
+                    'erreur' => "Vous ne pouvez pas prendre plus de cafe que le stock prévu !"
+                ]);
             }
 
             $commande->getCafe()->setStock($commande->getCafe()->getStock() - $commande->getQuantite());
@@ -69,6 +73,7 @@ class CommandeController extends AbstractController
         return $this->render('commande/new.html.twig', [
             'commande' => $commande,
             'form' => $form->createView(),
+            'erreur' => false,
         ]);
     }
 
